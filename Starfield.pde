@@ -1,5 +1,5 @@
 class Particle{
-  int myC, mySize;
+  int myC;
   double mySpeed, myAngle, myX, myY;
   Particle(){
     myC = color((int) (Math.random()*100) + 100, (int) (Math.random()*100)+100, (int) (Math.random()*100)+100);
@@ -7,7 +7,6 @@ class Particle{
     mySpeed =  (double)(Math.random()*40);
     myX = 250;
     myY = 250;
-    mySize = 6;
   }
   
   void move(){
@@ -18,25 +17,11 @@ class Particle{
   void show(){
     fill (myC);
     noStroke();
-    if (mySize == 6){
-    ellipse ((float)myX, (float)myY, mySize,mySize);
-    }else {
-  rect((float)myX,(float)myY, 40,20);
-  ellipse((float)myX, (float)myY +10.0, 30,20);
-  ellipse ((float)myX + 40.0, (float)myY + 10.0, 30,20);
-  ellipse ((float)myX + 20.0, (float)myY, 30,30);
-  ellipse ((float)myX + 20.0, (float)myY, 55, 20);
-  
-  
-   //rect(50,50, 40,20);
- // ellipse(50, 60, 30,20);
- // ellipse (90, 60, 30,20);
- // ellipse (70, 50, 30,30);
-//  ellipse (70, 50, 55, 20);
+    ellipse ((float)myX, (float)myY, 6,6);
 }
   
   }
-}
+
 
 class OddballParticle extends Particle{
   OddballParticle(){
@@ -45,13 +30,22 @@ class OddballParticle extends Particle{
     mySpeed = (double) (Math.random()*10);
     myX = 250;
     myY = 250;
-    mySize = 13;
+    }
+    void show(){
+    fill (myC);
+    noStroke();
+  rect((float)myX,(float)myY, 40,20);
+  ellipse((float)myX, (float)myY +10.0, 30,20);
+  ellipse ((float)myX + 40.0, (float)myY + 10.0, 30,20);
+  ellipse ((float)myX + 20.0, (float)myY, 30,30);
+  ellipse ((float)myX + 20.0, (float)myY, 55, 20);
+  
     }
     
   }
   
 
-Particle [] ella = new Particle [1000];
+Particle [] ella = new Particle [1100];
 
 void setup(){
   size (500,500);
