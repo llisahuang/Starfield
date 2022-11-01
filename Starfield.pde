@@ -51,7 +51,7 @@ class OddballParticle extends Particle{
   }
   
 
-Particle [] ella = new Particle [1100];
+Particle [] ella = new Particle [1000];
 
 void setup(){
   size (500,500);
